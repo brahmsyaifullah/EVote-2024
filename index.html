@@ -15,12 +15,12 @@
     <style>
         @font-face {
             font-family: The Nutcracker;
-            src: url("{% static '/core/materials/Thenutcracker.ttf' %}");
+            src: url("{% 'static/core/materials/Thenutcracker.ttf' %}");
         }
 
         @font-face {
             font-family: Candara;
-            src: url("{% static '/core/materials/Candara.ttf' %}");
+            src: url("{% 'static/core/materials/Candara.ttf' %}");
         }
 
         header {
@@ -40,7 +40,7 @@
         }
 
         html {
-            background: url("{% static '/core/materials/Background.png' %}") no-repeat center fixed;
+            background: url("{% 'static/core/materials/Background.png' %}") no-repeat center fixed;
             background-size: cover;
         }
 
@@ -72,19 +72,19 @@
         }
 
         .button-candidate:nth-child(1) {
-            background-image: url("{% static '/core/materials/1.png' %}");
+            background-image: url("{% 'static/core/materials/1.png' %}");
         }
 
         .button-candidate:nth-child(2) {
-            background-image: url("{% static '/core/materials/2.png' %}");
+            background-image: url("{% 'static/core/materials/2.png' %}");
         }
 
         .button-candidate:nth-child(3) {
-            background-image: url("{% static '/core/materials/3.png' %}");
+            background-image: url("{% 'static/core/materials/3.png' %}");
         }
 
         .button-candidate:nth-child(4) {
-            background-image: url("{% static '/core/materials/4.png' %}");
+            background-image: url("{% 'static/core/materials/4.png' %}");
         }
 
         #wrapper-confirmation-button {
@@ -142,9 +142,9 @@
 </head>
 
 <header>
-    <img class="logo MPK" src="{% static '/core/materials/MPK.png' %}" height="5">
-    <img class="title" src="{% static '/core/materials/Kaderisasi2023.png' %}" height="110px">
-    <img class="logo Kader" src="{% static '/core/materials/Kaderisasi.png' %}" height="5">
+    <img class="logo MPK" src="{% 'static/core/materials/MPK.png' %}" height="5">
+    <img class="title" src="{% 'static/core/materials/Kaderisasi2023.png' %}" height="110px">
+    <img class="logo Kader" src="{% 'static/core/materials/Kaderisasi.png' %}" height="5">
 </header>
 
 <body>
