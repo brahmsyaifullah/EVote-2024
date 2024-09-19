@@ -1,0 +1,125 @@
+@font-face {
+    font-family: The Nutcracker;
+    src: url("{% static '/core/materials/Thenutcracker.ttf' %}");
+}
+
+@font-face {
+    font-family: Candara;
+    src: url("{% static '/core/materials/Candara.ttf' %}");
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-top: 5%;
+    margin-bottom: 0;
+
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+html {
+    background: url("{% static '/core/materials/bg.png' %}") no-repeat center fixed;
+    background-size: cover;
+}
+
+body {
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+
+.button-candidate {
+    position: relative;
+    background-size: cover;
+    width: 240px;
+    height: 320px;
+    font-size: 1.6rem;
+    border-radius: 30px 30px 30px 30px;
+    transition: .2s;
+    border: none;
+    margin: 0 1rem;
+    box-shadow: 8px 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.button-candidate:hover {
+    transform: scale(105%);
+    box-shadow: 8px 8px 50px 0 rgba(0, 0, 0, 0.8);
+}
+
+.button-candidate:nth-child(1) {
+    background-image: url("{% static '/core/materials/Paslon1.png' %}");
+}
+
+.button-candidate:nth-child(2) {
+    background-image: url("{% static '/core/materials/Paslon2.png' %}");
+}
+
+.button-candidate:nth-child(3) {
+    background-image: url("{% static '/core/materials/Paslon3.png' %}");
+}
+
+.button-candidate:nth-child(4) {
+    background-image: url("{% static '/core/materials/Paslon4.png' %}");
+}
+
+#wrapper-confirmation-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    display: none;
+    z-index: 1000 !important;
+}
+
+#wrapper-confirmation-button::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: black;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    background-size: cover;
+    opacity: 80%;
+}
+
+#confirmation-button {
+    vertical-align: middle;
+    background-color: #262626;
+    color: gold;
+    font-family: Candara;
+    font-size: 1rem;
+    border-radius: 10px 10px 10px 10px;
+    padding: 0.5rem 1rem;
+    margin: 10px;
+    z-index: 100 !important;
+    border: 1px solid gold;
+    transition: .2s;
+}
+
+#confirmation-button:hover {
+    transform: scale(110%);
+}
+
+.footer {
+    width: 100%;
+    height: 30px;
+    display: block;
+}
