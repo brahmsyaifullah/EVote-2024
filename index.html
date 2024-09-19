@@ -1,0 +1,238 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static '/core/favicon/favicon.ico' %}">
+    <title>E-VOTE 🤖</title>
+    <script>
+        window.history.forward();
+    </script>
+    <style>
+        @font-face {
+            font-family: The Nutcracker;
+            src: url("{% static '/core/materials/Thenutcracker.ttf' %}");
+        }
+
+        @font-face {
+            font-family: Candara;
+            src: url("{% static '/core/materials/Candara.ttf' %}");
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 12%;
+            margin-right: 12%;
+            margin-top: 5%;
+            margin-bottom: 0;
+
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+        }
+
+        html {
+            background: url("{% static '/core/materials/Background.png' %}") no-repeat center fixed;
+            background-size: cover;
+        }
+
+        body {
+            justify-content: center;
+            align-items: center;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .button-candidate {
+            position: relative;
+            background-size: cover;
+            width: 240px;
+            height: 320px;
+            font-size: 1.6rem;
+            border-radius: 30px 30px 30px 30px;
+            transition: .2s;
+            border: none;
+            margin: 0 1rem;
+            box-shadow: 8px 8px 32px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .button-candidate:hover {
+            transform: scale(105%);
+            box-shadow: 8px 8px 50px 0 rgba(0, 0, 0, 0.8);
+        }
+
+        .button-candidate:nth-child(1) {
+            background-image: url("{% static '/core/materials/1.png' %}");
+        }
+
+        .button-candidate:nth-child(2) {
+            background-image: url("{% static '/core/materials/2.png' %}");
+        }
+
+        .button-candidate:nth-child(3) {
+            background-image: url("{% static '/core/materials/3.png' %}");
+        }
+
+        .button-candidate:nth-child(4) {
+            background-image: url("{% static '/core/materials/4.png' %}");
+        }
+
+        #wrapper-confirmation-button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            justify-content: center;
+            display: none;
+            z-index: 1000 !important;
+        }
+
+        #wrapper-confirmation-button::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            background-color: black;
+            align-items: center;
+            justify-items: center;
+            justify-content: center;
+            background-size: cover;
+            opacity: 80%;
+        }
+
+        #confirmation-button {
+            vertical-align: middle;
+            background-color: #262626;
+            color: wheat;
+            font-family: Candara;
+            font-size: 1rem;
+            border-radius: 10px 10px 10px 10px;
+            padding: 0.5rem 1rem;
+            margin: 10px;
+            z-index: 100 !important;
+            border: 1px solid wheat;
+            transition: .2s;
+        }
+
+        #confirmation-button:hover {
+            transform: scale(110%);
+        }
+
+        .footer {
+            width: 100%;
+            height: 50px;
+            display: block;
+        }
+    </style>
+</head>
+
+<header>
+    <img class="logo MPK" src="{% static '/core/materials/MPK.png' %}" height="5">
+    <img class="title" src="{% static '/core/materials/Kaderisasi2023.png' %}" height="110px">
+    <img class="logo Kader" src="{% static '/core/materials/Kaderisasi.png' %}" height="5">
+</header>
+
+<body>
+    <div id="wrapper-confirmation-button">
+        <button onClick="hideconfirmationbutton()" id="confirmation-button">
+            <strong>Tidak</strong>
+        </button>
+        <button onClick="clicksubmit()" id="confirmation-button">
+            <strong>Yakin</strong>
+        </button>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; padding: 3rem 0;">
+        <button onclick="showconfirmationbutton(), clickoption(1)" class="button-candidate" type="submit">
+            <div
+                style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 18%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
+                <a style="font-family: The Nutcracker; color: wheat; z-index: 100 !important; padding-bottom: 10px;">
+                    Fathi Ammar Rahman </br>
+                    Ratu Dinara
+                </a>
+            </div>
+        </button>
+        <button onclick="showconfirmationbutton(), clickoption(2)" class="button-candidate" type="submit">
+            <div
+                style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 18%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
+                <a style="font-family: The Nutcracker; color: wheat; z-index: 100 !important; padding-bottom: 10px;">
+                    Asyraf Zahirul Roshidu </br>
+                    Pramita Nafa Zhafourein
+                </a>
+            </div>
+        </button>
+        <button onclick="showconfirmationbutton(), clickoption(3)" class="button-candidate" type="submit">
+            <div
+                style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 18%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
+                <a style="font-family: The Nutcracker; color: wheat; z-index: 100 !important; padding-bottom: 10px;">
+                    Ramadhan Nayaka </br>
+                    Fatimah Aulia
+                </a>
+            </div>
+        </button>
+        <button onclick="showconfirmationbutton(), clickoption(4)" class="button-candidate" type="submit">
+            <div
+                style="display: flex; justify-content: center; align-items: flex-end; position: absolute; top: 0; left: 0; z-index: 0 !important; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0,0,0,0.5) 18%, rgba(0, 0, 0, 0) 100%); border-radius: 30px 30px 30px 30px;">
+                <a style="font-family: The Nutcracker; color: wheat; z-index: 100 !important; padding-bottom: 10px;">
+                    M. Farish Haykal </br>
+                    Azizah Jihan
+                </a>
+            </div>
+        </button>
+    </div>
+    <form method="POST" action="" enctype="multipart/form-data" style="display: none;">
+        {% csrf_token %}
+        <div class="form_input">
+            {{ form.candidate }}
+        </div>
+        <button id="submit-button" type="submit" class="btn btn-link" style="z-index: 0;">
+            submit
+        </button>
+    </form>
+    <footer style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0);">
+        <div class="footer">
+            <div style="color: #fff; text-shadow: 0px 0px 5px rgb(0, 0, 0, 1); font-family: Candara; text-align: center; letter-spacing: 1px; font-size: larger;">
+                E-Vote by ICT
+            </div>
+        </div>
+    </footer>
+    <script>
+        function clickoption(n) {
+            options = document.querySelectorAll("option");
+            for (let i = 0; i < options.length; i++) {
+                options[i].selected = false;
+
+            }
+            options[n].selected = true;
+        }
+
+        function clicksubmit() {
+            document.getElementById("submit-button").click();
+        }
+
+        function showconfirmationbutton() {
+            let confirmationbutton = document.getElementById("wrapper-confirmation-button");
+            confirmationbutton.style.display = "flex";
+        }
+        function hideconfirmationbutton() {
+            let confirmationbutton = document.getElementById("wrapper-confirmation-button");
+            confirmationbutton.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
