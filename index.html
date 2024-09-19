@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="{% static '/core/favicon/favicon.ico' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'core/favicon/favicon.ico' %}">
     <title>E-VOTE 🤖</title>
     <script>
         window.history.forward();
@@ -15,12 +15,12 @@
     <style>
         @font-face {
             font-family: The Nutcracker;
-            src: url("{% 'static/core/materials/Thenutcracker.ttf' %}");
+            src: url("{% static 'core/materials/Thenutcracker.ttf' %}");
         }
 
         @font-face {
             font-family: Candara;
-            src: url("{% 'static/core/materials/Candara.ttf' %}");
+            src: url("{% static 'core/materials/Candara.ttf' %}");
         }
 
         header {
@@ -31,7 +31,6 @@
             margin-right: 12%;
             margin-top: 5%;
             margin-bottom: 0;
-
         }
 
         .logo {
@@ -40,7 +39,7 @@
         }
 
         html {
-            background: url("{% 'static/core/materials/Background.png' %}") no-repeat center fixed;
+            background: url("{% static 'core/materials/Background.png' %}") no-repeat center fixed;
             background-size: cover;
         }
 
@@ -51,7 +50,6 @@
             margin: 0;
             padding: 0;
         }
-
 
         .button-candidate {
             position: relative;
@@ -72,19 +70,19 @@
         }
 
         .button-candidate:nth-child(1) {
-            background-image: url("{% 'static/core/materials/1.png' %}");
+            background-image: url("{% static 'core/materials/1.png' %}");
         }
 
         .button-candidate:nth-child(2) {
-            background-image: url("{% 'static/core/materials/2.png' %}");
+            background-image: url("{% static 'core/materials/2.png' %}");
         }
 
         .button-candidate:nth-child(3) {
-            background-image: url("{% 'static/core/materials/3.png' %}");
+            background-image: url("{% static 'core/materials/3.png' %}");
         }
 
         .button-candidate:nth-child(4) {
-            background-image: url("{% 'static/core/materials/4.png' %}");
+            background-image: url("{% static 'core/materials/4.png' %}");
         }
 
         #wrapper-confirmation-button {
@@ -142,9 +140,9 @@
 </head>
 
 <header>
-    <img class="logo MPK" src="{% 'static/core/materials/MPK.png' %}" height="5">
-    <img class="title" src="{% 'static/core/materials/Kaderisasi2023.png' %}" height="110px">
-    <img class="logo Kader" src="{% 'static/core/materials/Kaderisasi.png' %}" height="5">
+    <img class="logo MPK" src="{% static 'core/materials/MPK.png' %}" height="5">
+    <img class="title" src="{% static 'core/materials/Kaderisasi2023.png' %}" height="110px">
+    <img class="logo Kader" src="{% static 'core/materials/Kaderisasi.png' %}" height="5">
 </header>
 
 <body>
@@ -199,40 +197,9 @@
         <div class="form_input">
             {{ form.candidate }}
         </div>
-        <button id="submit-button" type="submit" class="btn btn-link" style="z-index: 0;">
-            submit
-        </button>
+        <button id="submit-button" type="submit"></button>
     </form>
-    <footer style="position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0);">
-        <div class="footer">
-            <div style="color: #fff; text-shadow: 0px 0px 5px rgb(0, 0, 0, 1); font-family: Candara; text-align: center; letter-spacing: 1px; font-size: larger;">
-                E-Vote by ICT
-            </div>
-        </div>
-    </footer>
-    <script>
-        function clickoption(n) {
-            options = document.querySelectorAll("option");
-            for (let i = 0; i < options.length; i++) {
-                options[i].selected = false;
-
-            }
-            options[n].selected = true;
-        }
-
-        function clicksubmit() {
-            document.getElementById("submit-button").click();
-        }
-
-        function showconfirmationbutton() {
-            let confirmationbutton = document.getElementById("wrapper-confirmation-button");
-            confirmationbutton.style.display = "flex";
-        }
-        function hideconfirmationbutton() {
-            let confirmationbutton = document.getElementById("wrapper-confirmation-button");
-            confirmationbutton.style.display = "none";
-        }
-    </script>
 </body>
+<footer class="footer"></footer>
 
 </html>
